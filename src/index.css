@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .my-btn {
+    @apply hover:scale-110 cursor-pointer transition-all;
+  }
+}
