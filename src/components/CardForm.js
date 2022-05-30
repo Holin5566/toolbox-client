@@ -41,7 +41,7 @@ const FormAddTool = ({ setOpen }) => {
       console.log(e);
     }
   };
-
+  // TODO 設計表單驗證
   return (
     <div className="p-5 m-auto bg-white border-2 w-96">
       <h3 className="w-40 text-2xl font-bold border-b-2">新增工具</h3>

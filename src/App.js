@@ -18,6 +18,7 @@ function App() {
     // firebase auth 驗證成功
     const { uid, email, photoURL } = user;
 
+    // TODO 改成 effect
     // NOTE 載入工具列表 / Cards
     try {
       const { data: tools } = await axios.get(`${URL}/api/tool`);
@@ -44,11 +45,11 @@ function App() {
         user = data;
         const usedDHT = {};
         data.used.forEach((item) => {
-          usedDHT[item.toString()] = item;
+          usedDHT[item.toString()] = "exist";
         });
         const interestedDHT = {};
         data.interested.forEach((item) => {
-          interestedDHT[item.toString()] = item;
+          interestedDHT[item.toString()] = "exist";
         });
         dispatch(login.action({ user, usedDHT, interestedDHT }));
       }
@@ -56,7 +57,7 @@ function App() {
       console.log(e);
     }
   });
-
+  // TODO 設計RWD
   return (
     <div className="relative text-gray-700 bg-slate-100 App">
       <Header />

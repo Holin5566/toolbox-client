@@ -109,7 +109,7 @@ const Card = ({ tool, Logo }) => {
         <p className="text-right">
           <a
             href={tool.docUrl}
-            className="text-xs font-bold underline  text-sky-500"
+            className="text-xs font-bold underline text-sky-500"
           >
             Document...
           </a>
@@ -120,6 +120,7 @@ const Card = ({ tool, Logo }) => {
         {/* user row */}
         <div className="flex flex-wrap items-center justify-between border-b-1"></div>
         {/* tags */}
+        {/* TODO 設計 Card 新增標籤邏輯 */}
         <div className="flex flex-wrap mt-2 text-center whitespace-nowrap">
           {tags ? (
             tags.map((tag) => (

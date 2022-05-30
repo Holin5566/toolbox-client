@@ -15,13 +15,13 @@ const Main = () => {
 
   // NOTE get data
   useEffect(() => {
-    // TODO 更新成 redux
-    // get tools
-    (async () => {
-      const result = await axios.get(`${URL}/api/tool`);
-      const { data } = result;
-      // setTools(data);
-    })();
+    // TODO 更新成 redux //OK
+    // // get tools
+    // (async () => {
+    //   const result = await axios.get(`${URL}/api/tool`);
+    //   const { data } = result;
+    //   // setTools(data);
+    // })();
 
     // get tags
     (async () => {

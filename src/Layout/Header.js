@@ -41,6 +41,7 @@ const Header = () => {
             ) : (
               // 登出狀態 avatar
               <div>
+                {/* TODO 設計變更名稱邏輯 */}
                 <BsGithub
                   className="w-8 h-8 my-btn"
                   onClick={() => {
