@@ -8,6 +8,7 @@ import { login } from "./data/user";
 import { setTools } from "./data/tool";
 import axios from "axios";
 import { URL } from ".";
+import { useEffect } from "react";
 
 function App() {
   const dispatch = useDispatch();
@@ -17,16 +18,6 @@ function App() {
 
     // firebase auth 驗證成功
     const { uid, email, photoURL } = user;
-
-    // TODO 改成 effect
-    // NOTE 載入工具列表 / Cards
-    try {
-      const { data: tools } = await axios.get(`${URL}/api/tool`);
-      dispatch(setTools.action(tools));
-    } catch (e) {
-      console.log(e);
-    }
-
     // NOTE 註冊會員
     try {
       const { data } = await axios.get(`${URL}/api/user?uid=${uid}`);
@@ -57,6 +48,16 @@ function App() {
       console.log(e);
     }
   });
+
+  // NOTE 載入工具列表 / Cards
+  useEffect(() => {
+    axios
+      .get(`${URL}/api/tool`)
+      .then(({ data: tools }) => {
+        dispatch(setTools.action(tools));
+      })
+      .catch((e) => console.log(e));
+  }, [dispatch]);
   // TODO 設計RWD
   return (
     <div className="relative text-gray-700 bg-slate-100 App">

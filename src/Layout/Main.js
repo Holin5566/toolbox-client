@@ -10,25 +10,17 @@ import { useSelector } from "react-redux";
 
 const Main = () => {
   // const [tools, setTools] = useState([]);
-  const [tags, setTags] = useState([]);
+  const [tags, setTags] = useState([{ name: "tags" }]);
   const { tools } = useSelector((state) => state);
 
   // NOTE get data
   useEffect(() => {
-    // TODO 更新成 redux //OK
-    // // get tools
-    // (async () => {
-    //   const result = await axios.get(`${URL}/api/tool`);
-    //   const { data } = result;
-    //   // setTools(data);
-    // })();
-
-    // get tags
-    (async () => {
-      const result = await axios.get(`${URL}/api/tag`);
-      const { data } = result;
-      setTags(data);
-    })();
+    axios
+      .get(`${URL}/api/tag`)
+      .then(({ data }) => {
+        setTags(data);
+      })
+      .catch((e) => console.log(e));
   }, []);
 
   return (

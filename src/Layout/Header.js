@@ -3,6 +3,7 @@ import { FaSearch } from "react-icons/fa";
 import { BsGithub } from "react-icons/bs";
 import { FiLogOut } from "react-icons/fi";
 import { userSignin, userSignout } from "../auth/firebase";
+import { motion } from "framer-motion";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../data/user";
 
@@ -10,7 +11,7 @@ const Header = () => {
   const { isLogin, user } = useSelector((state) => state);
   const dispatch = useDispatch();
   return (
-    <header className="px-5 border-b-2 bg-slate-50 opacity-80">
+    <header className="px-5 border-b-2 bg-slate-50 opacity-80 ">
       <nav className="container relative flex flex-wrap items-center justify-between py-3">
         {/* search bar */}
         <div className="flex items-center justify-center w-full md:w-1/4">
@@ -54,7 +55,9 @@ const Header = () => {
               </div>
             )}
           </button>
-          <p>{isLogin ? user.name : "遊客"}</p>
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+            {isLogin ? user.name : "遊客"}
+          </motion.p>
           {/* 登出登入按鈕 */}
           {isLogin && (
             <button

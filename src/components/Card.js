@@ -26,9 +26,7 @@ const Card = ({ tool, Logo }) => {
 
   //NOTE　event function
   const ckickInterested = () => {
-    if (!isLogin) {
-      return window.alert("請連結Github");
-    }
+    if (!isLogin) return window.alert("請連結Github");
 
     const postUserInterested = async (uid, tool_id, exist) => {
       exist
@@ -47,9 +45,7 @@ const Card = ({ tool, Logo }) => {
   };
 
   const ckickUsed = () => {
-    if (!isLogin) {
-      return window.alert("請連結Github");
-    }
+    if (!isLogin) return window.alert("請連結Github");
 
     const postUserUsed = async (uid, tool_id, exist) => {
       exist
@@ -76,9 +72,9 @@ const Card = ({ tool, Logo }) => {
   }, [_id]);
   return (
     <motion.div
-      className="relative w-1/4 px-4 py-2 m-3 my-8 bg-white border"
-      initial={{ scale: 0, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
+      className="relative w-full md:w-1/3 lg:w-1/4 px-4 py-2 m-3 my-8 bg-white border"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
     >
       <div className="text-rose-600"></div>
       {/* card head */}
@@ -96,13 +92,13 @@ const Card = ({ tool, Logo }) => {
         } top-2 right-8 my-btn hover:text-rose-600`}
         onClick={ckickInterested}
       />
+
       <HiOutlineAcademicCap
         className={`absolute top-2 right-2 text-${
           usedDHT[_id] ? "green-500" : "gray-400"
         } my-btn hover:text-green-500  ${usedDHT[_id] ? capOn : capOff}`}
         onClick={ckickUsed}
       />
-
       {/* card body */}
       <div className="border-b-2">
         <p className="p-2">{content}</p>
@@ -117,8 +113,6 @@ const Card = ({ tool, Logo }) => {
       </div>
       {/* card footer */}
       <div>
-        {/* user row */}
-        <div className="flex flex-wrap items-center justify-between border-b-1"></div>
         {/* tags */}
         {/* TODO 設計 Card 新增標籤邏輯 */}
         <div className="flex flex-wrap mt-2 text-center whitespace-nowrap">
