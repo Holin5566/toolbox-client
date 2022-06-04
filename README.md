@@ -13,10 +13,11 @@
 - Firebase Auth
 - Framer Motion
 
-## 心得
+## 目前心得
 這次專案主要目的用於練習 Redux 應用，順便結合 Firebase 驗證帳戶。<br/>
 原先只練習過 useReducer + useContext，這次使用 Redux，<br/>
-嘗試了一下用 Action Creator 的方式來管理 Switch, 整體可讀性，維護性提升許多。<br/>
-Firebase 實作後稍微理解一些 JWT 的運作過程，下次打算手刻一次 JWT 驗證。<br/>
-本來資料庫使用 MySQL，後來評估 MongoDB 會更容易部屬，便更換為 MongoDB。<br/>
-Tailwind 、Framer Motion 也是第一次嘗試，體驗良好，下次專案會嘗試深入更多應用。
+
+- 嘗試了一下用 Action Creator 的方式來管理 Switch, 整體可讀性，維護性提升許多。<br/>
+- Firebase 實作後稍微理解一些 JWT 的運作過程，下次打算手刻一次 JWT 驗證。<br/>
+- 本來資料庫使用 MySQL，後來評估 MongoDB 會更容易部屬，便更換為 MongoDB。<br/>
+- 第一次嘗試 Tailwind 、Framer Motion，體驗良好，下次專案會嘗試深入更多應用。
